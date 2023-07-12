@@ -7,7 +7,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Setup Python environment
       uses: actions/setup-python@v2
     - name: Install requirements
@@ -23,7 +23,7 @@ jobs:
     needs: [lint]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Set up GCloud
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
       with:
