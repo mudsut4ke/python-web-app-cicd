@@ -84,5 +84,5 @@ jobs:
 
     - name: Test deployment
       run: |
-        DEPLOY_URL=$(gcloud run services describe app2 --platform=managed --region=us-central1 | grep https)
+        DEPLOY_URL=$(gcloud run services describe ${{ env.APPLICATION_NAME }} --platform=managed --region=us-central1 | grep https)
         curl -sL --max-time 300 -o /dev/null -w "%{http_code}" $DEPLOY_URL | grep 200 || exit 1
